@@ -28,18 +28,14 @@ class _HomePageState extends State<HomePage> {
     super.initState();
   }
 
-  // controller for text field
   final _controller = TextEditingController();
 
-  // checkbox was tapped
   void checkBoxChanged(bool? value, int index) {
     setState(() {
       db.toDoList[index][1] = !db.toDoList[index][1];
     });
     db.updateData();
   }
-
-  // save new task
 
   void saveNewTask() {
     setState(() {
@@ -50,7 +46,6 @@ class _HomePageState extends State<HomePage> {
     db.updateData();
   }
 
-  // create new task
   void createNewTask() {
     showDialog(
       context: context,
@@ -64,7 +59,6 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  // delete task
   void deleteTask(int index) {
     setState(() {
       db.toDoList.removeAt(index);
